@@ -1,27 +1,33 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view/>
+  <Header />
+  <router-view class="router"></router-view>
+  <Footer />
 </template>
-
+<script>
+import Home from '@/views/Home.vue'
+import Header from './components/Header.vue'
+import Footer from './components/Footer.vue';
+export default {
+  components: {
+    Home,
+    Header,
+    Footer
+  }
+}
+</script>
 <style>
+.router{
+  
+}
+@font-face {
+  font-family: "Yekan";
+  src: local("Yekan"),
+    url(./assets/font/B_Yekan/Yekan.ttf) format("truetype");
+}
+
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-nav {
-  padding: 30px;
-}
-
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
+  font-family: Yekan;
+  direction: rtl;
 }
 
 nav a.router-link-exact-active {
